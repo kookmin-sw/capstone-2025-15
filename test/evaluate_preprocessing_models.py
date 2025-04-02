@@ -27,6 +27,7 @@ def mecab_analyze(sentence: str) -> list:
             words.append(token)
     return words
 
+
 # 기타 처리 함수 (현재는 그대로 사용)
 def reorder(words): return words
 def glossify(words): return words
