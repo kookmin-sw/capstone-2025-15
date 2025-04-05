@@ -8,8 +8,9 @@ TESTSET_DIR = "experiments/tokenizer_comparison/testset"
 RESULT_PATH = "experiments/tokenizer_comparison/results.csv"
 
 # Kiwi 설정 - Semi-BiGRU 기반 성능 모델 사용
+#kiwi = Kiwi()
 kiwi = Kiwi(model_type="sbg")
-
+ 
 def kiwi_analyze(sentence: str) -> list:
     result = kiwi.analyze(sentence, top_n=1)[0][0]
     return [(word, tag) for word, tag, _, _ in result]
