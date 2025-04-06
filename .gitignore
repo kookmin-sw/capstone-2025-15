@@ -22,6 +22,9 @@ Kiwi/build/
 *.exe
 *.dll
 
+#js module
+web/Backend/node_modules
+
 # 에디터/IDE 파일
 .vscode/
 .idea/
