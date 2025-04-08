@@ -26,6 +26,9 @@ Kiwi/build/
 # dependencies
 web/Backend/node_modules
 
+#build
+web/Backend/build
+
 ##FE
 # dependencies
 web/Frontend/node_modules
