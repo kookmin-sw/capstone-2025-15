@@ -1,0 +1,5 @@
+Testset,MeCab,Kiwi
+distant.txt,0.538,0.385
+irregular_verbs.txt,0.448,0.433
+nouns.txt,0.602,0.460
+verb_vs_adj.txt,0.362,0.587
