@@ -16,7 +16,7 @@ data/*.csv
 data/*.jsonl
 
 # 빌드/실행 파일
-Kiwi/build/
+Kiwi/
 *.so
 *.out
 *.exe
