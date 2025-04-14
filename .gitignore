@@ -12,8 +12,7 @@ __pycache__/
 .ipynb_checkpoints/
 
 # 데이터셋 제외
-data/*.csv
-data/*.jsonl
+data/
 
 # 빌드/실행 파일
 Kiwi/
