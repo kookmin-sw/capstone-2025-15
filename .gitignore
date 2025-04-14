@@ -24,10 +24,10 @@ Kiwi/build/
 
 ## BE
 # dependencies
-web/Backend/node_modules
+web/Backend/express/node_modules
 
 #build
-web/Backend/build
+web/Backend/express/build
 
 ##FE
 # dependencies
