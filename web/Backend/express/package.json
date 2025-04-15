@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@google-cloud/storage": "^7.16.0",
+    "axios": "^1.8.4",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "multer": "^1.4.5-lts.2",
