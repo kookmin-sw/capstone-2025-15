@@ -1,7 +1,7 @@
 // routes/test/testRouter.js
 const express = require('express');
 const multer = require('multer');
-const {testUpload} = require('../../controller/test/testController');
+const {testUpload, testSTT} = require('../../controller/test/testController');
 
 const router = express.Router();
 const upload = multer({storage: multer.memoryStorage()});
@@ -14,4 +14,6 @@ router.get('/', (req, res) => {
 // ✅ POST /test/upload → 파일 업로드 처리
 router.post('/upload', upload.single('video'), testUpload);
 
+//stt 업로드 테스트
+router.get('/stt', testSTT);
 module.exports = router;
