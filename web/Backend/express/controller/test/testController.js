@@ -28,4 +28,23 @@ async function testUpload(req, res) {
     }
 }
 
-module.exports = {testUpload};
+// controller/test/sttTestController.js
+const {sttRequest} = require('../../utils/gcs');
+
+async function testSTT(req, res) {
+    const bucketName = 'capstone25-15';
+    const audioFilePath = 'test/947d8231-d689-45f6-ba8b-00d2a7fc4c83/audio.wav';
+    const transcriptPath = 'test/947d8231-d689-45f6-ba8b-00d2a7fc4c83/trans.json';
+    const language = 'ko-KR';
+
+    try {
+        const result = await sttRequest(bucketName, audioFilePath, transcriptPath, language);
+        console.log('✅ STT 테스트 완료');
+        res.json({status: 'success', result});
+    } catch (error) {
+        console.error('❌ STT 테스트 실패:', error);
+        res.status(500).json({status: 'error', message: error.message});
+    }
+}
+
+module.exports = {testUpload, testSTT};
