@@ -33,3 +33,9 @@ for _, row in df.sample(20, random_state=42).iterrows():
     print("🔧 병합 결과:", merged)
     print("✅ 정답 gloss:", gold)
     print("-" * 60)
+
+
+# 결과 저장
+with open("experiments/glossify_experiment/results_token_merge.json", "w", encoding="utf-8") as f:
+    json.dump(results, f, ensure_ascii=False, indent=2)
+print("✅ 결과 저장 완료 → results_token_merge.json")
