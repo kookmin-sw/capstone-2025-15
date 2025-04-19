@@ -1,13 +1,24 @@
 import os
 import json
 import csv
+import re
 
-# 입력 JSON들이 들어있는 디렉토리
+# 입력 폴더 및 출력 파일 경로
 INPUT_DIR = "data/01_NIKL_Sign Language Parallel Corpus_2023"
-OUTPUT_PATH = "data/ksl_gloss_dataset.csv"
+OUTPUT_RAW_PATH = "data/ksl_gloss_dataset.csv"
+OUTPUT_CLEANED_PATH = "data/ksl_gloss_dataset_cleaned.csv"
 
-results = []
+results_raw = []
+results_cleaned = []
 
+# 🔧 숫자 및 # 제거 함수
+def clean_gloss_token(gloss):
+    return re.sub(r"\d+#?$", "", gloss.strip())
+
+def clean_glosses(gloss_str):
+    return ", ".join([clean_gloss_token(g) for g in gloss_str.split(",")])
+
+# 🔄 JSON 파일 순회
 for filename in os.listdir(INPUT_DIR):
     if not filename.endswith(".json"):
         continue
@@ -18,26 +29,27 @@ for filename in os.listdir(INPUT_DIR):
         try:
             data = json.load(f)
         except json.JSONDecodeError:
-            print(f"❌ JSON 파싱 실패: {filename}")
             continue
 
-    # ① 한국어 문장
     korean = data.get("krlgg_sntenc", {}).get("koreanText", "").strip()
-
-    # ② 수어 gloss 리스트 추출
     gestures = data.get("sign_script", {}).get("sign_gestures_strong", [])
     glosses = [g.get("gloss_id") for g in gestures if g.get("gloss_id")]
 
     if korean and glosses:
-        results.append({
-            "korean": korean,
-            "glosses": ", ".join(glosses)
-        })
+        gloss_str = ", ".join(glosses)
+        results_raw.append({"korean": korean, "glosses": gloss_str})
+        results_cleaned.append({"korean": korean, "glosses": clean_glosses(gloss_str)})
 
-# 저장
-with open(OUTPUT_PATH, "w", newline="", encoding="utf-8") as f:
+# 저장: 원본 gloss 포함
+with open(OUTPUT_RAW_PATH, "w", newline="", encoding="utf-8-sig") as f:
     writer = csv.DictWriter(f, fieldnames=["korean", "glosses"])
     writer.writeheader()
-    writer.writerows(results)
+    writer.writerows(results_raw)
 
-print(f"✅ 추출 완료: {len(results)}개 샘플 저장됨 → {OUTPUT_PATH}")
+# 저장: 숫자 및 # 제거된 gloss 포함
+with open(OUTPUT_CLEANED_PATH, "w", newline="", encoding="utf-8-sig") as f:
+    writer = csv.DictWriter(f, fieldnames=["korean", "glosses"])
+    writer.writeheader()
+    writer.writerows(results_cleaned)
+
+print(f"✅ 저장 완료: {len(results_cleaned)}개 샘플 → {OUTPUT_CLEANED_PATH}")
