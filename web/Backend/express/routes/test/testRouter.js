@@ -1,7 +1,7 @@
 // routes/test/testRouter.js
 const express = require('express');
 const multer = require('multer');
-const {testUpload, testSTT, processTimestamp} = require('../../controller/test/testController');
+const {testUpload, testSTT, processTimestamp, CLOVATest} = require('../../controller/test/testController');
 
 const router = express.Router();
 const upload = multer({storage: multer.memoryStorage()});
@@ -20,4 +20,6 @@ router.get('/stt', testSTT);
 // ✅ 후처리 (timestamp 생성)
 router.get('/timestamp', processTimestamp);
 
+//clova 테스트
+router.get('/clova', CLOVATest);
 module.exports = router;

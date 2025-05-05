@@ -2,6 +2,8 @@ const {v4: uuidv4} = require('uuid');
 const {uploadToBucket, sttRequest} = require('../../utils/gcs');
 const {Storage} = require('@google-cloud/storage');
 const {korScriptGrouping} = require('../../utils/sttFormatter');
+const {clovaSTT} = require('../../service/clovaSTT');
+
 const fs = require('fs');
 const path = require('path');
 
@@ -81,8 +83,19 @@ async function processTimestamp(req, res) {
     }
 }
 
+async function CLOVATest(req, res) {
+    try {
+        let result = await clovaSTT('https://storage.googleapis.com/ondam_storage/audio.wav?GoogleAccessId=fair-jigsaw-450505-q7%40appspot.gserviceaccount.com&Expires=1746458380&Signature=jkcHgUBIkuvh%2FIq9dJHxlcwo0FX7JP5fEN6pOR6kFTj7HveU9JVsWKWQ5zRgh1cc7BDVxDe0HMvc0h3QAWu97Qz9InmJ0WQZUwN%2FIA4d3Ai2UFGWFayu5DIHH%2FjSM8Ixkc9iI1LuD8qtFqV2xE7073D75pqvwW1tYQ2crq60vJfhsEwTHxvdx8AhSnN5tv9EX4KeouIG%2B74w7MULPuG4bd25ZePlIw8rZPWhMYiLfx8Yg1TwGInPNS1P1DNAzA%2FdpFTKlTtH61FSGMShULlaIhAvQIpNDNEUO57cXcAOzUSa9oREP2qBqO1B5laGVnHbGApKUlR2GdjI%2BTdBezQi7g%3D%3D');
+        res.status(200).json({result: result});
+    } catch (error) {
+        console.error('❌ timestamp 생성 실패:', error);
+        res.status(500).json({message: 'timestamp 저장 실패', error: error.message});
+    }
+}
+
 module.exports = {
     testUpload,
     testSTT,
-    processTimestamp
+    processTimestamp,
+    CLOVATest
 };
