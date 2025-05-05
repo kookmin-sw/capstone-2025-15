@@ -1,6 +1,7 @@
 // utils/gcs.js
 const {Storage} = require('@google-cloud/storage');
 const {SpeechClient} = require('@google-cloud/speech');
+const {SecretManagerServiceClient} = require('@google-cloud/secret-manager');
 
 // GCS 업로드
 async function uploadToBucket(bucketName, filePath, file) {
@@ -57,7 +58,17 @@ async function sttRequest(bucketName, audioFilePath, outputFilePath, language = 
     }
 }
 
+//  Secret 가져오기
+async function getSecret(SECRET_ID) {
+    const client = new SecretManagerServiceClient();
+    const [version] = await client.accessSecretVersion({
+        name: `projects/219454056854/secrets/${SECRET_ID}/versions/latest`,
+    });
+    return version.payload.data.toString('utf8');
+}
+
 module.exports = {
     uploadToBucket,
     sttRequest,
+    getSecret,
 };
