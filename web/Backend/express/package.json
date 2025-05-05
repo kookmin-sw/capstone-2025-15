@@ -8,6 +8,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@google-cloud/secret-manager": "^6.0.1",
     "@google-cloud/speech": "^7.0.1",
     "@google-cloud/storage": "^7.16.0",
     "axios": "^1.8.4",
