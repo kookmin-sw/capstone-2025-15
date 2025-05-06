@@ -1,4 +1,4 @@
-// utils/gcs.js
+// utils/gcsService.js
 const {Storage} = require('@google-cloud/storage');
 const {SpeechClient} = require('@google-cloud/speech');
 const {SecretManagerServiceClient} = require('@google-cloud/secret-manager');
