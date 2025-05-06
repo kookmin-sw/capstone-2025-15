@@ -89,9 +89,28 @@ async function convertVideoToWav(bucketName, videoPath, wavPath) {
     }
 }
 
+async function signUrl(bucketname, filepath) {
+    const storage = new Storage();
+    const bucket = storage.bucket(bucketname);
+    const file = bucket.file(filepath);
+
+    try {
+        const [url] = await file.getSignedUrl({
+            action: 'read',
+            expires: Date.now() + 1000 * 60 * 10, // 10분 유효
+        });
+        return url;
+    } catch (error) {
+        console.error('❌ Signed URL 생성 실패:', error.message);
+        // null 또는 사용자 정의 오류 메시지 반환
+        return null;
+    }
+}
+
 module.exports = {
     uploadToBucket,
     sttRequest,
     getSecret,
     convertVideoToWav,
+    signUrl,
 };

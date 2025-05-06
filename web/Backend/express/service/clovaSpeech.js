@@ -28,7 +28,6 @@ async function requestClova(audiourl) {
         }
     );
     console.log(`CLOVA SPEECH 완료`);
-    console.log(response);
     return response.data;
 }
 
