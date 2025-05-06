@@ -12,6 +12,10 @@ app.use(express.json());
 const testRouter = require('./routes/test/testRouter');
 app.use('/test', testRouter);
 
+//파이프라인 라우터 연결
+const pipelineRouter = require('./routes/pipelineRouter');
+app.use('/pipeline', pipelineRouter);
+
 //리액트 앱 라우팅 처리
 app.get(/^\/(?!api|test).*/, (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));

@@ -93,4 +93,5 @@ module.exports = {
     uploadToBucket,
     sttRequest,
     getSecret,
+    convertVideoToWav,
 };
