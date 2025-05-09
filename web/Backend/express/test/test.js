@@ -1,5 +1,5 @@
 const axios = require('axios');
-const {sttRequest} = require('../utils/gcs'); // gcs.js 파일 경로에 맞게 조정
+const {sttRequest} = require('../service/gcsService'); // gcsService.js 파일 경로에 맞게 조정
 
 //cloud run 호출 테스트
 async function convertVideoTest() {

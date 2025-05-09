@@ -1,8 +1,8 @@
 const {v4: uuidv4} = require('uuid');
-const {uploadToBucket, sttRequest} = require('../../utils/gcs');
+const {uploadToBucket, sttRequest} = require('../../service/gcsService');
 const {Storage} = require('@google-cloud/storage');
-const {korScriptGrouping} = require('../../utils/sttFormatter');
-const {clovaSTT} = require('../../service/clovaSTT');
+const {korScriptGrouping} = require('../../utils/gcsSttFormatter');
+const {clovaSTT} = require('../../utils/clovaTimestamping');
 
 const fs = require('fs');
 const path = require('path');

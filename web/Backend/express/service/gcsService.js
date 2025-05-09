@@ -1,7 +1,8 @@
-// utils/gcs.js
+// utils/gcsService.js
 const {Storage} = require('@google-cloud/storage');
 const {SpeechClient} = require('@google-cloud/speech');
 const {SecretManagerServiceClient} = require('@google-cloud/secret-manager');
+const axios = require("axios");
 
 // GCS 업로드
 async function uploadToBucket(bucketName, filePath, file) {
@@ -67,8 +68,49 @@ async function getSecret(SECRET_ID) {
     return version.payload.data.toString('utf8');
 }
 
+async function convertVideoToWav(bucketName, videoPath, wavPath) {
+    const convertowavServiceUrl = 'https://convertowav-service-219454056854.asia-northeast3.run.app/convert_videos'
+    const data = {
+        bucket_name: bucketName,
+        video_filename: videoPath,
+        wav_filename: wavPath,
+    };
+
+    try {
+        const response = await axios.post(convertowavServiceUrl, data, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        console.error('wav 변환 완료');
+    } catch (err) {
+        console.error('에러 발생:', err.response ? err.response.data : err.message);
+    }
+}
+
+async function signUrl(bucketname, filepath) {
+    const storage = new Storage();
+    const bucket = storage.bucket(bucketname);
+    const file = bucket.file(filepath);
+
+    try {
+        const [url] = await file.getSignedUrl({
+            action: 'read',
+            expires: Date.now() + 1000 * 60 * 10, // 10분 유효
+        });
+        return url;
+    } catch (error) {
+        console.error('❌ Signed URL 생성 실패:', error.message);
+        // null 또는 사용자 정의 오류 메시지 반환
+        return null;
+    }
+}
+
 module.exports = {
     uploadToBucket,
     sttRequest,
     getSecret,
+    convertVideoToWav,
+    signUrl,
 };
