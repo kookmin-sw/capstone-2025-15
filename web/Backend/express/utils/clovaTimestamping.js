@@ -156,6 +156,7 @@ function groupBySpeaker(data, speakerNumber) {
     return group;
 }
 
+
 function gapPadding(data) {
     const padded = [];
 
@@ -194,4 +195,5 @@ function gapPadding(data) {
 groupBySpeaker(data, 4).forEach((datum) => {
     console.log(gapPadding(datum));
 })
+
 module.exports = {clovaTimestamping};
