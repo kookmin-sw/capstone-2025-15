@@ -156,4 +156,44 @@ function groupBySpeaker(data, speakerNumber) {
     return group;
 }
 
+
+function gapPadding(data) {
+    const padded = [];
+
+    // 맨 앞에 빈 공백 삽입 필요 시
+    if (data[0].start > 0) {
+        padded.push({
+            sentence: "",
+            start: 0,
+            end: data[0].start
+        });
+    }
+
+    // 첫 문장 추가
+    padded.push(data[0]);
+
+    for (let i = 1; i < data.length; i++) {
+        const prev = data[i - 1];
+        const curr = data[i];
+
+        // ✅ 이전 발화와 현재 발화 사이에 실제 gap이 있는 경우에만 공백 추가
+        if (curr.start > prev.end) {
+            padded.push({
+                sentence: "",
+                start: prev.end,
+                end: curr.start
+            });
+        }
+
+        padded.push(curr);
+    }
+
+    return padded;
+}
+
+
+groupBySpeaker(data, 4).forEach((datum) => {
+    console.log(gapPadding(datum));
+})
+
 module.exports = {clovaTimestamping};
