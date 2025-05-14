@@ -14,7 +14,8 @@ async function pipeline(req, res) {
         const bucketName = 'capstone25-15';
         const videoPath = `${uuid}/originalVideo${ext}`;
         const audioPath = `${uuid}/audio.wav`;
-        const timestampPath = `${uuid}/timestamp.json`;
+        const groupedtimestampPath = `${uuid}/timestamp.json`;
+        const timestampPath = `${uuid}/stt.json`;
 
         console.log(`✅ 처리시작: ${uuid}`);
         //영상 업로드
@@ -28,8 +29,8 @@ async function pipeline(req, res) {
         //stt, 화자분리
         let signedUrl = await signUrl(bucketName, audioPath);//음성파일 url
         let sttResult = await clovaSTT(signedUrl, 4);
-
-        await uploadToBucket(bucketName, timestampPath, JSON.stringify(sttResult, null, 2));
+        await uploadToBucket(bucketName, timestampPath, JSON.stringify(sttResult[0], null, 2));//stt결과값 타임라인에 따른 정리
+        await uploadToBucket(bucketName, groupedtimestampPath, JSON.stringify(sttResult[1], null, 2));//화자별 그룹화 적용된 결과
         console.log(`✅ stt 완료: gs://${bucketName}/${timestampPath}`);
         return res.status(200).json({status: 'success'});
     } catch (error) {

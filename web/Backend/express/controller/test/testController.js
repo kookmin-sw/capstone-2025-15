@@ -117,7 +117,7 @@ async function clovapipelinetest(req, res) {
         //stt, 화자분리
         let signedUrl = await signUrl(bucketName, audioPath);//음성파일 url
         let sttResult = await clovaSTT(signedUrl, 4);
-        
+
         await uploadToBucket(bucketName, timestampPath, JSON.stringify(sttResult, null, 2));
         console.log(`✅ stt 완료: gs://${bucketName}/${timestampPath}`);
         return res.status(200).json({status: 'success'});
@@ -128,10 +128,41 @@ async function clovapipelinetest(req, res) {
 }
 
 
+async function localstt(req, res) {
+    try {
+        const uuid = '1111';
+        const ext = '.mp4'
+        const storage = new Storage();
+        const bucketName = 'capstone25-15';
+        const videoPath = `${uuid}/originalVideo${ext}`;
+        const audioPath = `${uuid}/audio.wav`;
+        const timestampPath = `${uuid}/timestamp.json`;
+        const sttPath = `${uuid}/stt.json`;
+
+        //wav 변환요청
+        await convertVideoToWav(bucketName, videoPath, audioPath);
+        console.log(`✅ wav 변환 완료: gs://${bucketName}/${audioPath}`);
+
+        //stt, 화자분리
+        let signedUrl = await signUrl(bucketName, audioPath);//음성파일 url
+        let sttResult = await clovaSTT(signedUrl, 4);
+        await uploadToBucket(bucketName, sttPath, JSON.stringify(sttResult[0], null, 2));
+        await uploadToBucket(bucketName, timestampPath, JSON.stringify(sttResult[1], null, 2));
+        console.log(`✅ stt 완료: gs://${bucketName}/${timestampPath}`);
+        return res.status(200).json({status: 'success'});
+    } catch (error) {
+        console.error(`❌ 처리 실패:, error`);
+        return res.status(500).json({message: '처리 실패', error: error.message});
+    }
+}
+
 module.exports = {
     testUpload,
     testSTT,
     processTimestamp,
     CLOVATest,
     clovapipelinetest,
+    localstt,
 };
+
+

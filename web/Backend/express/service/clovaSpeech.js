@@ -44,7 +44,7 @@ async function clovaSTT(audiourl, speakerCnt) {
         })
         console.log(result);
         console.log(`✅ 타임스탬프 처리 완료`);
-        return result;
+        return [timestampingResult, result];
     } catch (error) {
         console.error('❌ 에러 발생:', error.response?.data || error.message);
     }

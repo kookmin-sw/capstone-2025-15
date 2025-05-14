@@ -1,5 +1,9 @@
 const axios = require('axios');
-const {sttRequest} = require('../service/gcsService'); // gcsService.js 파일 경로에 맞게 조정
+const {sttRequest, uploadToBucket, convertVideoToWav, signUrl} = require('../service/gcsService');
+const {v4: uuidv4} = require("uuid");
+const path = require("path");
+const {Storage} = require("@google-cloud/storage");
+const {clovaSTT} = require("../service/clovaSpeech"); // gcsService.js 파일 경로에 맞게 조정
 
 //cloud run 호출 테스트
 async function convertVideoTest() {
@@ -36,5 +40,6 @@ async function testSTT() {
         console.error('❌ STT 테스트 중 오류:', error.message);
     }
 }
+
 
 testSTT();

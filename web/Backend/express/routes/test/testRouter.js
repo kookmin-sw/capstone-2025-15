@@ -7,6 +7,7 @@ const {
     processTimestamp,
     CLOVATest,
     clovapipelinetest,
+    localstt
 } = require('../../controller/test/testController');
 
 const router = express.Router();
@@ -29,5 +30,6 @@ router.get('/timestamp', processTimestamp);
 //clova 테스트
 router.get('/clova', CLOVATest);
 router.post('/clovapipelinetest', upload.single('video'), clovapipelinetest);
+router.get('/localstt', localstt);
 
 module.exports = router;
