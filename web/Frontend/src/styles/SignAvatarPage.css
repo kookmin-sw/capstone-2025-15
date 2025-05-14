@@ -1,0 +1,92 @@
+.container {
+    padding: 1rem;
+}
+
+/* Grid 레이아웃 2x2 */
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "video     avatar"
+    "subtitle  thumbnails";
+    row-gap: 0rem; /* ✅ 상하 간격 완전 제거 */
+    column-gap: 0.5rem; /* 좌우 간격은 유지 */
+}
+
+/* 1사분면: 메인 영상 */
+.grid-video {
+    grid-area: video;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-video video {
+    width: 100%;
+    height: 540px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    display: block;
+}
+
+/* 2사분면: 메인 아바타 */
+.grid-avatar {
+    grid-area: avatar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.focused-avatar {
+    height: 540px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 4px solid orange;
+    border-radius: 10px;
+}
+
+/* 3사분면: 자막 */
+.grid-subtitle {
+    grid-area: subtitle;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1;
+}
+
+/* ✅ SubtitlePanel 내부 요소 여백 제거 */
+.grid-subtitle * {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.3;
+    box-sizing: border-box;
+}
+
+/* 4사분면: 썸네일 아바타 */
+.grid-thumbnails {
+    grid-area: thumbnails;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* ✅ 썸네일 위로 정렬 */
+    gap: 0.5rem;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
+/* 썸네일 아바타 스타일 */
+.thumbnail-avatar {
+    width: 32%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* 모든 video 태그 공통 */
+video {
+    display: block;
+    max-height: 100%;
+}

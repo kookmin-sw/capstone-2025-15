@@ -1,0 +1,8 @@
+.container {
+    padding: 1rem;
+}
+
+.main-content {
+    display: flex;
+    gap: 2rem;
+}
