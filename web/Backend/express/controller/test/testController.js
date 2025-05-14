@@ -2,10 +2,11 @@ const {v4: uuidv4} = require('uuid');
 const {uploadToBucket, sttRequest} = require('../../service/gcsService');
 const {Storage} = require('@google-cloud/storage');
 const {korScriptGrouping} = require('../../utils/gcsSttFormatter');
-const {clovaSTT} = require('../../utils/clovaTimestamping');
-
+const {clovaSTT} = require('../../service/clovaSpeech');
+const {convertVideoToWav, signUrl} = require("../../service/gcsService");
 const fs = require('fs');
 const path = require('path');
+const {groupBySpeaker} = require("../../utils/clovaTimestamping");
 
 const storage = new Storage();
 const bucketName = 'capstone25-15';
@@ -93,9 +94,75 @@ async function CLOVATest(req, res) {
     }
 }
 
+async function clovapipelinetest(req, res) {
+    try {
+        if (!req.file) return res.status(400).json({message: '파일이 없습니다.'});
+        const uuid = uuidv4();
+        const ext = path.extname(req.file.originalname);
+        const storage = new Storage();
+        const bucketName = 'capstone25-15';
+        const videoPath = `${uuid}/originalVideo${ext}`;
+        const audioPath = `${uuid}/audio.wav`;
+        const timestampPath = `${uuid}/timestamp.json`;
+
+        console.log(`✅ 처리시작: ${uuid}`);
+        //영상 업로드
+        await uploadToBucket(bucketName, videoPath, req.file.buffer);
+        console.log(`✅ 업로드 완료: gs://${bucketName}/${videoPath}`);
+
+        //wav 변환요청
+        await convertVideoToWav(bucketName, videoPath, audioPath);
+        console.log(`✅ wav 변환 완료: gs://${bucketName}/${audioPath}`);
+
+        //stt, 화자분리
+        let signedUrl = await signUrl(bucketName, audioPath);//음성파일 url
+        let sttResult = await clovaSTT(signedUrl, 4);
+
+        await uploadToBucket(bucketName, timestampPath, JSON.stringify(sttResult, null, 2));
+        console.log(`✅ stt 완료: gs://${bucketName}/${timestampPath}`);
+        return res.status(200).json({status: 'success'});
+    } catch (error) {
+        console.error(`❌ 처리 실패:, error`);
+        return res.status(500).json({message: '처리 실패', error: error.message});
+    }
+}
+
+
+async function localstt(req, res) {
+    try {
+        const uuid = '1111';
+        const ext = '.mp4'
+        const storage = new Storage();
+        const bucketName = 'capstone25-15';
+        const videoPath = `${uuid}/originalVideo${ext}`;
+        const audioPath = `${uuid}/audio.wav`;
+        const timestampPath = `${uuid}/timestamp.json`;
+        const sttPath = `${uuid}/stt.json`;
+
+        //wav 변환요청
+        await convertVideoToWav(bucketName, videoPath, audioPath);
+        console.log(`✅ wav 변환 완료: gs://${bucketName}/${audioPath}`);
+
+        //stt, 화자분리
+        let signedUrl = await signUrl(bucketName, audioPath);//음성파일 url
+        let sttResult = await clovaSTT(signedUrl, 4);
+        await uploadToBucket(bucketName, sttPath, JSON.stringify(sttResult[0], null, 2));
+        await uploadToBucket(bucketName, timestampPath, JSON.stringify(sttResult[1], null, 2));
+        console.log(`✅ stt 완료: gs://${bucketName}/${timestampPath}`);
+        return res.status(200).json({status: 'success'});
+    } catch (error) {
+        console.error(`❌ 처리 실패:, error`);
+        return res.status(500).json({message: '처리 실패', error: error.message});
+    }
+}
+
 module.exports = {
     testUpload,
     testSTT,
     processTimestamp,
-    CLOVATest
+    CLOVATest,
+    clovapipelinetest,
+    localstt,
 };
+
+

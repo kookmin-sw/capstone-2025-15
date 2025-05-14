@@ -4,6 +4,7 @@ const {uploadToBucket, convertVideoToWav, signUrl} = require("../service/gcsServ
 const {Storage} = require("@google-cloud/storage");
 const {clovaSTT} = require("../service/clovaSpeech");
 
+
 async function pipeline(req, res) {
     try {
         if (!req.file) return res.status(400).json({message: '파일이 없습니다.'});
@@ -13,7 +14,8 @@ async function pipeline(req, res) {
         const bucketName = 'capstone25-15';
         const videoPath = `${uuid}/originalVideo${ext}`;
         const audioPath = `${uuid}/audio.wav`;
-        const timestampPath = `${uuid}/timestamp.json`;
+        const groupedtimestampPath = `${uuid}/timestamp.json`;
+        const timestampPath = `${uuid}/stt.json`;
 
         console.log(`✅ 처리시작: ${uuid}`);
         //영상 업로드
@@ -25,16 +27,18 @@ async function pipeline(req, res) {
         console.log(`✅ wav 변환 완료: gs://${bucketName}/${audioPath}`);
 
         //stt, 화자분리
-        let signedUrl = await signUrl(bucketName, audioPath);
-        let sttResult = await clovaSTT(signedUrl);
-        await uploadToBucket(bucketName, timestampPath, JSON.stringify(sttResult, null, 2));
+        let signedUrl = await signUrl(bucketName, audioPath);//음성파일 url
+        let sttResult = await clovaSTT(signedUrl, 4);
+        await uploadToBucket(bucketName, timestampPath, JSON.stringify(sttResult[0], null, 2));//stt결과값 타임라인에 따른 정리
+        await uploadToBucket(bucketName, groupedtimestampPath, JSON.stringify(sttResult[1], null, 2));//화자별 그룹화 적용된 결과
         console.log(`✅ stt 완료: gs://${bucketName}/${timestampPath}`);
         return res.status(200).json({status: 'success'});
     } catch (error) {
-        console.error(`❌ 처리 실패:`, error);
+        console.error(`❌ 처리 실패:, error`);
         return res.status(500).json({message: '처리 실패', error: error.message});
     }
 }
+
 
 module.exports = {
     pipeline
