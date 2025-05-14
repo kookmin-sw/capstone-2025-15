@@ -29,10 +29,18 @@ function groupBySpeaker(data, speakerNumber) {
             end: datum.end
         });
     });
+    group.forEach(datum => {
+        if (datum.length == 0) {
+            datum.push({
+                sentence: "",
+                start: 0,
+                end: 0,
+            });
+        }
+    })
 
     return group;
 }
-
 
 function gapPadding(data) {
     const padded = [];
@@ -69,4 +77,5 @@ function gapPadding(data) {
 }
 
 
+//빈 배열 (화자가 4보다 작은 경우 나오는 빈 배열에 대해 함수 적용시 문제 -> 빈 배열은 더미 데이터 1개씩 넣어주기
 module.exports = {clovaTimestamping, groupBySpeaker, gapPadding};

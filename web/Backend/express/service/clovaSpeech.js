@@ -35,12 +35,14 @@ async function requestClova(audiourl) {
 async function clovaSTT(audiourl, speakerCnt) {
     try {
         const sttResult = await requestClova(audiourl); //stt 요청
-        const timestampingResult = sttResult.segments.map(clovaTimestamping);//타임스탬프 분리
+        console.log(sttResult);
+        const timestampingResult = sttResult.segments.map(clovaTimestamping);//타임스탬프 분리, 이건 이후에 프론트에서 자막 용으로 써야함
+        console.log(timestampingResult);
         const result = [];
         groupBySpeaker(timestampingResult, speakerCnt).forEach((datum) => {
             result.push(gapPadding(datum));
         })
-
+        console.log(result);
         console.log(`✅ 타임스탬프 처리 완료`);
         return result;
     } catch (error) {

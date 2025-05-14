@@ -1,7 +1,13 @@
 // routes/test/testRouter.js
 const express = require('express');
 const multer = require('multer');
-const {testUpload, testSTT, processTimestamp, CLOVATest} = require('../../controller/test/testController');
+const {
+    testUpload,
+    testSTT,
+    processTimestamp,
+    CLOVATest,
+    clovapipelinetest,
+} = require('../../controller/test/testController');
 
 const router = express.Router();
 const upload = multer({storage: multer.memoryStorage()});
@@ -22,4 +28,6 @@ router.get('/timestamp', processTimestamp);
 
 //clova 테스트
 router.get('/clova', CLOVATest);
+router.post('/clovapipelinetest', upload.single('video'), clovapipelinetest);
+
 module.exports = router;
