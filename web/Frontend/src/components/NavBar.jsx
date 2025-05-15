@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../assets/logo.png'; // 경로 조정 필요
 
 export default function NavBar() {
     const styles = {
@@ -42,7 +41,7 @@ export default function NavBar() {
                 <li><a href="/list" style={styles.menuLink}>Home</a></li>
             </ul>
             <div style={styles.logoWrapper}>
-                <img src={logo} alt="Logo" style={styles.logo}/>
+                <img src={'/logo.png'} alt="Logo" style={styles.logo}/>
             </div>
         </nav>
     );
