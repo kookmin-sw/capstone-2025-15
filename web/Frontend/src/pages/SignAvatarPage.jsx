@@ -1,29 +1,26 @@
 import React, {useEffect, useRef, useState} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
-import Header from "../components/Header";
 import VideoPlayer from "../components/VideoPlayer";
 import SubtitlePanel from "../components/SubtitlePanel";
+import NavBar from "../components/NavBar";
 import "../styles/SignAvatarPage.css";
 
 export default function SignAvatarPage() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // 1. 훅은 항상 최상단에 호출
     const [videoUrl, setVideoUrl] = useState(null);
     const [avatarData, setAvatarData] = useState([]);
     const [subtitleData, setSubtitleData] = useState([]);
 
     const [currentTime, setCurrentTime] = useState(0);
-    const [focusedSpeaker, setFocusedSpeaker] = useState(1); // 초기값 1
+    const [focusedSpeaker, setFocusedSpeaker] = useState(1);
     const [isMainPlaying, setIsMainPlaying] = useState(false);
     const videoRefs = useRef([]);
 
-    // 2. 파라미터 처리 (훅 내)
     const params = new URLSearchParams(location.search);
     const folderId = params.get("id");
 
-    // 3. 데이터 불러오기 훅 (조건 없이 항상 호출)
     useEffect(() => {
         if (!folderId) {
             alert("잘못된 접근입니다.");
@@ -50,10 +47,9 @@ export default function SignAvatarPage() {
             });
     }, [folderId, navigate]);
 
-    // 4. 포커스 상태 업데이트 훅 (항상 호출)
     useEffect(() => {
         if (subtitleData.length === 0) {
-            setFocusedSpeaker(1); // 자막 없으면 기본값 유지
+            setFocusedSpeaker(1);
             return;
         }
 
@@ -66,10 +62,8 @@ export default function SignAvatarPage() {
         if (currentSubtitle) {
             setFocusedSpeaker(Number(currentSubtitle.speaker));
         }
-        // 없으면 포커스 유지 (변경하지 않음)
     }, [currentTime, subtitleData]);
 
-    // 5. 아바타 비디오 싱크 및 재생 제어 훅 (항상 호출)
     useEffect(() => {
         avatarData.forEach((avatar, index) => {
             const video = videoRefs.current[index];
@@ -90,14 +84,13 @@ export default function SignAvatarPage() {
         });
     }, [avatarData, currentTime, focusedSpeaker, isMainPlaying]);
 
-    // 6. JSX 내에서 조건부 렌더링 처리
     return (
         <>
+            <NavBar/>
             {!videoUrl ? (
                 <div>로딩 중...</div>
             ) : (
                 <div className="container">
-                    <Header/>
                     <div className="main-grid">
                         <div className="grid-video">
                             <VideoPlayer

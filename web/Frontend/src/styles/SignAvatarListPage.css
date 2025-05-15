@@ -1,0 +1,45 @@
+.page-container {
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.video-list {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    width: 200px;
+    box-sizing: border-box; /* 패딩, 보더 포함 크기 계산 */
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    overflow: hidden; /* 넘침 방지 */
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: auto; /* 높이 자동으로 조절 */
+    max-height: 120px; /* 최대 높이 제한 */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    display: block;
+}
+
+.video-card-title {
+    padding: 10px;
+    font-weight: 600;
+    color: #333;
+}
