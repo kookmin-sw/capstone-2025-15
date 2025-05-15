@@ -4,6 +4,8 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+// 정적 파일 서빙 추가
+app.use(express.static(path.join(__dirname, 'build')))
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.json());
