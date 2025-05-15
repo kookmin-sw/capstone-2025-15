@@ -11,7 +11,7 @@ export default function NavBar() {
             backgroundColor: '#FFFF',
             padding: '0.5rem 1rem',
             color: 'black',
-            height: '50px',
+            height: '70px',
         },
         logoWrapper: {
             position: 'absolute',

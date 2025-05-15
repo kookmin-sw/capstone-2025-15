@@ -1,128 +1,91 @@
 .container {
     padding: 1rem;
-    background-color: #fafafa;
-    min-height: 100vh;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
 }
 
+/* Grid 레이아웃 2x2 */
 .main-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-    "video avatar"
-    "subtitle thumbnails";
-    row-gap: 0.5rem;
-    column-gap: 1rem;
+    "video     avatar"
+    "subtitle  thumbnails";
+    row-gap: 0rem; /* ✅ 상하 간격 완전 제거 */
+    column-gap: 0.5rem; /* 좌우 간격은 유지 */
 }
 
+/* 1사분면: 메인 영상 */
 .grid-video {
     grid-area: video;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .grid-video video {
     width: 100%;
     height: 540px;
     object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid #ccc;
     display: block;
 }
 
+/* 2사분면: 메인 아바타 */
 .grid-avatar {
     grid-area: avatar;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    background-color: white;
+    margin: 0;
+    padding: 0;
 }
 
 .focused-avatar {
     height: 540px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 12px;
-    border: 3px solid #ff6501;
-    box-shadow: 0 0 8px #ff6500aa;
+    border: 4px solid orange;
+    border-radius: 10px;
 }
 
-/* 자막 영역 - 스크롤 제거, 높이 자동 조절 */
+/* 3사분면: 자막 */
 .grid-subtitle {
     grid-area: subtitle;
-    background-color: white;
-    padding: 12px 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-
-    overflow-y: visible !important;
-    max-height: none !important;
-    height: auto !important;
-
-    font-size: 1rem;
-    line-height: 1.4;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1;
 }
 
-/* 자막 내부 요소 여백 제거 */
+/* ✅ SubtitlePanel 내부 요소 여백 제거 */
 .grid-subtitle * {
     margin: 0 !important;
     padding: 0 !important;
+    line-height: 1.3;
+    box-sizing: border-box;
 }
 
+/* 4사분면: 썸네일 아바타 */
 .grid-thumbnails {
     grid-area: thumbnails;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
+    align-items: flex-start; /* ✅ 썸네일 위로 정렬 */
+    gap: 0.5rem;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
 }
 
+/* 썸네일 아바타 스타일 */
 .thumbnail-avatar {
     width: 32%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 10px;
-    border: 1.5px solid #ddd;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
-.thumbnail-avatar:hover {
-    box-shadow: 0 4px 12px rgba(255, 101, 1, 0.7);
-    transform: scale(1.05);
-}
-
-/* 반응형 - 모바일 */
-@media screen and (max-width: 768px) {
-    .main-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto;
-        grid-template-areas:
-      "video"
-      "avatar"
-      "thumbnails"
-      "subtitle";
-        row-gap: 1rem;
-    }
-
-    .grid-video video,
-    .focused-avatar {
-        height: auto;
-        aspect-ratio: auto;
-        max-height: 300px;
-    }
-
-    .thumbnail-avatar {
-        width: 30%;
-    }
-}
-
-/* video 공통 스타일 */
+/* 모든 video 태그 공통 */
 video {
     display: block;
     max-height: 100%;

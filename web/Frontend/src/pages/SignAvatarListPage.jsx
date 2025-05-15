@@ -1,13 +1,12 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
-import NavBar from "../components/NavBar";
-import '../styles/SignAvatarListPage.css'; // CSS 임포트 추가
 
-const FOLDER_COUNT = 2; // 영상 폴더 수, 필요시 수정
+const FOLDER_COUNT = 3; // 영상 폴더 수, 필요시 수정
 
 export default function SignAvatarListPage() {
     const navigate = useNavigate();
 
+    // 폴더 기준으로 영상 데이터 생성 함수
     function generateVideoList() {
         const list = [];
         for (let i = 1; i <= FOLDER_COUNT; i++) {
@@ -32,31 +31,36 @@ export default function SignAvatarListPage() {
     const videoList = generateVideoList();
 
     const onClickVideo = (video) => {
+        // id로만 이동, 실제 데이터는 상세 페이지에서 로딩
         navigate(`/video?id=${video.id}`);
     };
 
     return (
-        <>
-            <NavBar/>
-            <div className="page-container">
-                <h1>영상 목록</h1>
-                <div className="video-list">
-                    {videoList.map((video) => (
-                        <div
-                            key={video.id}
-                            className="video-card"
-                            onClick={() => onClickVideo(video)}
-                        >
-                            <img
-                                src={video.thumbnail}
-                                alt={video.title}
-                                className="video-thumbnail"
-                            />
-                            <div className="video-card-title">{video.title}</div>
-                        </div>
-                    ))}
-                </div>
+        <div style={{padding: 20}}>
+            <h1>영상 목록</h1>
+            <div style={{display: "flex", gap: 16, flexWrap: "wrap"}}>
+                {videoList.map((video) => (
+                    <div
+                        key={video.id}
+                        style={{
+                            width: 200,
+                            cursor: "pointer",
+                            textAlign: "center",
+                            border: "1px solid #ddd",
+                            borderRadius: 8,
+                            padding: 10,
+                        }}
+                        onClick={() => onClickVideo(video)}
+                    >
+                        <img
+                            src={video.thumbnail}
+                            alt={video.title}
+                            style={{width: "100%", height: 120, objectFit: "cover", borderRadius: 6}}
+                        />
+                        <div style={{marginTop: 8, fontWeight: "bold"}}>{video.title}</div>
+                    </div>
+                ))}
             </div>
-        </>
+        </div>
     );
 }
