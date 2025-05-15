@@ -14,7 +14,7 @@ export default function SignAvatarListPage() {
             list.push({
                 id: folder,
                 title: `영상 ${folder}`,
-                thumbnail: `/videos/${folder}/thumb1.png`,
+                thumbnail: `/videos/${folder}/thumb1.jpg`,
                 videoUrl: `/videos/${folder}/main.mp4`,
                 avatarData: [
                     {speaker: 1, videoUrl: `/videos/${folder}/avatar1.mp4`},
@@ -32,7 +32,7 @@ export default function SignAvatarListPage() {
 
     const onClickVideo = (video) => {
         // id로만 이동, 실제 데이터는 상세 페이지에서 로딩
-        navigate(`/sign-avatar?id=${video.id}`);
+        navigate(`/video?id=${video.id}`);
     };
 
     return (
