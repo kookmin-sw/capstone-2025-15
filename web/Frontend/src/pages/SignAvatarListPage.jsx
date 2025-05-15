@@ -14,7 +14,7 @@ export default function SignAvatarListPage() {
             list.push({
                 id: folder,
                 title: `영상 ${folder}`,
-                thumbnail: `/videos/${folder}/thumb1.jpg`,
+                thumbnail: `/videos/${folder}/thumb1.png`,
                 videoUrl: `/videos/${folder}/main.mp4`,
                 avatarData: [
                     {speaker: 1, videoUrl: `/videos/${folder}/avatar1.mp4`},
