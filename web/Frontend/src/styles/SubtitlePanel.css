@@ -1,0 +1,22 @@
+.subtitle-panel {
+    margin-top: 2rem;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+    border-top: 1px solid #ccc;
+}
+
+.subtitle-item {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.subtitle-item:hover {
+    background-color: #eee;
+}
+
+.timestamp {
+    color: gray;
+    margin-right: 0.5rem;
+}
