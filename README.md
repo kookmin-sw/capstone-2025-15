@@ -18,7 +18,7 @@
 
 ...
 
-### 3. 팀 소개
+## 2. 팀 소개
 <div align='center'>
   <table>
     <tbody>
@@ -41,6 +41,72 @@
   </table>
 </div>
 &nbsp;  
+
+## 3. STT 비교 및 선택
+Clova Speech의 화자 분리 STT API를 활용해 화자별로 라벨링된 전사문을 추출하고,
+이를 기반으로 각 화자의 발화 내용과 타임스탬프를 정확하게 분리 및 처리합니다.
+
+또한 주요 STT 모델들에 대해 CER(Character Error Rate), 처리 시간, 예상 비용을 기준으로 성능을 비교하였고,
+그 결과 CLOVA SPEECH가 가장 우수한 정확도와 속도를 보이며 최종 선정되었습니다.
+
+### 평가 지표
+CER (Character Error Rate) : 문자 단위 오류율 (낮을수록 정확)<br>
+- CER = (𝑆+𝐷+𝐼) / 𝑁 <br>
+S (Substitutions): 잘못된 단어로 대체된 문자의 수<br>
+D (Deletions): 인식하지 못한 문자의 수<br>
+I (Insertions): 잘못 삽입된 문자의 수<br>
+N (Total Words): 참조(기준) 문장에 있는 총 문자의 수
+<br>
+
+처리 시간 (초) : 평균 처리 시간<br>
+분당 요금 (원) : 예상 비용
+
+| STT 시스템                                                | 평균 CER                                                | 처리 시간 (초)                                            | 예상 비용 (원)                                           |
+|--------------------------------------------------------|-------------------------------------------------------|------------------------------------------------------|-----------------------------------------------------|
+| <span style="background-color:#DCFFE4"> CLOVA</span> | <span style="background-color:#DCFFE4"> 0.0836</sapn> | <span style="background-color:#DCFFE4"> 3.836</sapn> | <span style="background-color:#DCFFE4"> 16.9</sapn> |
+| AWS                                                    | 0.1118                                                | 48.064                                               | 12.7                                                |
+| Azure                                                  | 0.1024                                                | 47.930                                               | 16.9                                                |
+| Whisper                                                | 0.1856                                                | 17.814                                               | 10.1                                                |
+| Google STT                                             | 0.2031                                                | 25.361                                               | 10.1                                                |
+
+### 후처리
+STT결과값을 이용해서 각 화자에 대한 아바타를 생성하기 위해서 화자 별
+전사문을 분리하였습니다.
+
+
+## 4. 기술 스택
+### 프론트엔드
+
+| 역할                   | 종류                                                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Programming Language | ![JavaScript](https://img.shields.io/badge/Javascript-F7DF1E?logo=javascript\&logoColor=black\&style=for-the-badge) |
+| Library              | ![React](https://img.shields.io/badge/React-61DAFB?logo=react\&logoColor=black\&style=for-the-badge)                |
+
+
+### 백엔드
+| 역할                   | 종류                                                                                                                               |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Programming Language | ![JavaScript](https://img.shields.io/badge/Javascript-F7DF1E?logo=javascript\&logoColor=black\&style=for-the-badge)              |
+| Library              | ![Express](https://img.shields.io/badge/Express-000000?logo=express\&logoColor=white\&style=for-the-badge)                       |
+| Database             | ![Google Cloud Storage](https://img.shields.io/badge/GCP%20Bucket-4285F4?logo=googlecloud\&logoColor=white\&style=for-the-badge) |
+| App Service          | ![Google Cloud](https://img.shields.io/badge/GCP-4285F4?logo=googlecloud\&logoColor=white\&style=for-the-badge)                  |
+
+
+### AI
+| 역할                   | 종류                                                                                                              |
+| -------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Programming Language | ![Python](https://img.shields.io/badge/Python-3776AB?logo=python\&logoColor=white\&style=for-the-badge)         |
+| Library              | ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi\&logoColor=white\&style=for-the-badge)      |
+| Application Service  | ![Google Cloud](https://img.shields.io/badge/GCP-4285F4?logo=googlecloud\&logoColor=white\&style=for-the-badge) |
+
+
+### 아바타
+
+| 역할                   | 종류                                                                                                         |
+| -------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Programming Language | ![Python](https://img.shields.io/badge/Python-3776AB?logo=python\&logoColor=white\&style=for-the-badge)    |
+| Program              | ![Blender](https://img.shields.io/badge/Blender-F5792A?logo=blender\&logoColor=white\&style=for-the-badge) |
+
 
 ### 5. 기타
 
