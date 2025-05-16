@@ -1,42 +1,42 @@
 [
   {
-    "sentence": "네 여기",
+    "sentence": "네 여기 / 여기 네",
     "speaker": "1",
     "start": 0,
     "end": 1992
   },
   {
-    "sentence": "안녕하세요.",
+    "sentence": "안녕하세요. / 안녕",
     "speaker": "2",
     "start": 1992,
     "end": 3107
   },
   {
-    "sentence": "안녕하세요. 식사 안 하셨죠?",
+    "sentence": "안녕하세요. 식사 안 하셨죠? / 하다 식사 안 ",
     "speaker": "1",
     "start": 3107,
     "end": 6000
   },
   {
-    "sentence": "네 이제 밥먹으러 가야죠",
+    "sentence": "네 이제 밥먹으러 가야죠 / 가다 이제 먹다",
     "speaker": "2",
     "start": 6000,
     "end": 7500
   },
   {
-    "sentence": "저녁 먹으러 한번 가보도록 하겠습니다. 이 집이 유명해요.",
+    "sentence": "저녁 먹으러 한번 가보도록 하겠습니다. 이 집이 유명해요. / 가다 저녁 먹다",
     "speaker": "1",
     "start": 7500,
     "end": 14263
   },
   {
-    "sentence": "주문부터 할게요.",
+    "sentence": "주문부터 할게요. / 주문",
     "speaker": "1",
     "start": 21000,
     "end": 22800
   },
   {
-    "sentence": "여기 처음 와보신 거예요?",
+    "sentence": "여기 처음 와보신 거예요? / 여기 처음 오다",
     "speaker": "3",
     "start": 27800,
     "end": 29000

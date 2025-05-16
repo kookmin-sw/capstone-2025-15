@@ -2,7 +2,7 @@ import React from "react";
 import {useNavigate} from "react-router-dom";
 import NavBar from "../components/NavBar";
 
-const FOLDER_COUNT = 3; // 영상 폴더 수, 필요시 수정
+const FOLDER_COUNT = 2; // 영상 폴더 수, 필요시 수정
 
 export default function SignAvatarListPage() {
     const navigate = useNavigate();
