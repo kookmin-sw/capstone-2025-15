@@ -1,9 +1,8 @@
- <td align='center'> <img src="https://github.com/user-attachments/assets/6872db44-a69e-4da9-9647-199c9cbbc76e" width="100%" height="100%"></td>
 
 ## 1. 프로잭트 소개
 
+<td align='center'> <img src="https://github.com/user-attachments/assets/ec00a1e1-21e2-4fd4-9cb2-a567efd7d41e" width="70%" height="70%"></td>
 ### 프로젝트 개요
-
 온담(溫談)은  농인을 위한 **수어 아바타 생성 서비스**입니다.
 영상 속 **다중화자 음성**을 자동으로 분석하고, 각 화자의 **감정**을 인식하여 **표준 한국 수어 기반의 아바타 동작**으로 변환합니다. 농인에게도 감정과 맥락을 온전히 제공할 수 있는 서비스를 제공합니다. 
 
