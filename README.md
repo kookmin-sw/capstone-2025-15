@@ -1,77 +1,45 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/gFPznrUY)
-# Welcome to GitHub
+ <td align='center'> <img src="https://github.com/user-attachments/assets/6872db44-a69e-4da9-9647-199c9cbbc76e" width="100%" height="100%"></td>
 
-캡스톤 팀 생성을 축하합니다.
+## 1. 프로잭트 소개
 
-## 팀소개 및 페이지를 꾸며주세요.
+### 프로젝트 개요
 
-- 프로젝트 소개
-  - 프로젝트 설치방법 및 데모, 사용방법, 프리뷰등을 readme.md에 작성.
-  - Api나 사용방법등 내용이 많을경우 wiki에 꾸미고 링크 추가.
+온담(溫談)은  농인을 위한 **수어 아바타 생성 서비스**입니다.
+영상 속 **다중화자 음성**을 자동으로 분석하고, 각 화자의 **감정**을 인식하여 **표준 한국 수어 기반의 아바타 동작**으로 변환합니다. 농인에게도 감정과 맥락을 온전히 제공할 수 있는 서비스를 제공합니다. 
 
-- 팀페이지 꾸미기
-  - 프로젝트 소개 및 팀원 소개
-  - index.md 예시보고 수정.
+### 프로젝트 필요성
 
-- GitHub Pages 리파지토리 Settings > Options > GitHub Pages 
-  - Source를 marster branch
-  - Theme Chooser에서 태마선택
-  - 수정후 팀페이지 확인하여 점검.
+세상은 소리로 가득하지만, 누군가에겐 **보이는 손짓과 표정이 유일한 언어**입니다. 그러나 현실은 그 손짓조차 닿지 못합니다. 등록 장애인 263만 명 중, **청각·언어장애인은 45만 명**으로 **두 번째로 많지만,** **수어 방송 의무 편성률은 단 7%.** 청각장애인 **10명 중 4명은 “이해할 수 없다”는 이유로 방송 시청을 포기합니다.** 
 
-**팀페이지 주소** -> https://kookmin-sw.github.io/ '{{자신의 리파지토리 아이디}}'
-
-**예시)** 2023년 0조  https://kookmin-sw.github.io/capstone-2023-00/
-
-
-## 내용에 아래와 같은 내용들을 추가하세요.
-
-### 1. 프로잭트 소개
-
-프로젝트
-
+한국 수어는 **2016년 한국수화언어법을 통해 한국어와 같은 공용어로 지정되었지만, 농인의 언어권을 보장하기엔 여전히 부족합니다.**
 ### 2. 소개 영상
 
-프로젝트 소개하는 영상을 추가하세요
+...
 
 ### 3. 팀 소개
-
-팀을 소개하세요.
-
-팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
-
-### 4. 사용법
-
-소스코드제출시 설치법이나 사용법을 작성하세요.
+<div align='center'>
+  <table>
+    <tbody>
+      <tr>
+        <td align='center'><a href="https://github.com/ddugel3"><img src="https://avatars.githubusercontent.com/u/56158371?v=4" width="100" height="100"></td>
+        <td align='center'><a href="https://github.com/govl0407"><img src="https://avatars.githubusercontent.com/u/62105026?v=4" width="100" height="100"></td>
+        <td align='center'><a href="https://github.com/GiyeonYang"><img src="https://github.com/user-attachments/assets/4a4a3eeb-0da1-4279-854f-051be87b53ca" width="100" height="100"></td>
+      </tr>
+      <tr>
+        <td align='center'>20203059</td>
+        <td align='center'>20203103</td>
+        <td align='center'>20203150</td>
+      </tr>
+      <tr>
+        <td align='center'>최건웅</td>
+        <td align='center'>최정민</td>
+        <td align='center'>양기연</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+&nbsp;  
 
 ### 5. 기타
 
 추가적인 내용은 자유롭게 작성하세요.
-
-
-## Markdown을 사용하여 내용꾸미기
-
-Markdown은 작문을 스타일링하기위한 가볍고 사용하기 쉬운 구문입니다. 여기에는 다음을위한 규칙이 포함됩니다.
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Support or Contact
-
-readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.
