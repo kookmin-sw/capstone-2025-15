@@ -22,6 +22,38 @@ Kiwi/build/
 *.exe
 *.dll
 
+## BE
+# dependencies
+web/Backend/express/node_modules
+
+#build
+web/Backend/express/build
+
+##FE
+# dependencies
+web/Frontend/node_modules
+web/Frontend/.pnp
+web/Frontend/.pnp.js
+
+# testing
+web/Frontend/coverage
+
+# production
+web/Frontend/build
+
+# misc
+web/Frontend/.env
+web/Frontend/.DS_Store
+web/Frontend/.env.local
+web/Frontend/.env.development.local
+web/Frontend/.env.test.local
+web/Frontend/.env.production.local
+
+web/Frontend/npm-debug.log*
+web/Frontend/yarn-debug.log*
+web/Frontend/yarn-error.log*
+
+
 # 에디터/IDE 파일
 .vscode/
 .idea/
@@ -30,3 +62,4 @@ Kiwi/build/
 # 기타
 *.log
 *.tmp
+
