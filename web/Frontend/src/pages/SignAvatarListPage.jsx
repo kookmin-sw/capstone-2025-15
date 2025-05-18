@@ -1,7 +1,8 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
+import NavBar from "../components/NavBar";
 
-const FOLDER_COUNT = 3; // 영상 폴더 수, 필요시 수정
+const FOLDER_COUNT = 2; // 영상 폴더 수, 필요시 수정
 
 export default function SignAvatarListPage() {
     const navigate = useNavigate();
@@ -36,31 +37,34 @@ export default function SignAvatarListPage() {
     };
 
     return (
-        <div style={{padding: 20}}>
-            <h1>영상 목록</h1>
-            <div style={{display: "flex", gap: 16, flexWrap: "wrap"}}>
-                {videoList.map((video) => (
-                    <div
-                        key={video.id}
-                        style={{
-                            width: 200,
-                            cursor: "pointer",
-                            textAlign: "center",
-                            border: "1px solid #ddd",
-                            borderRadius: 8,
-                            padding: 10,
-                        }}
-                        onClick={() => onClickVideo(video)}
-                    >
-                        <img
-                            src={video.thumbnail}
-                            alt={video.title}
-                            style={{width: "100%", height: 120, objectFit: "cover", borderRadius: 6}}
-                        />
-                        <div style={{marginTop: 8, fontWeight: "bold"}}>{video.title}</div>
-                    </div>
-                ))}
+        <>
+            <NavBar/>
+            <div style={{padding: 20}}>
+                <h1>영상 목록</h1>
+                <div style={{display: "flex", gap: 16, flexWrap: "wrap"}}>
+                    {videoList.map((video) => (
+                        <div
+                            key={video.id}
+                            style={{
+                                width: 200,
+                                cursor: "pointer",
+                                textAlign: "center",
+                                border: "1px solid #ddd",
+                                borderRadius: 8,
+                                padding: 10,
+                            }}
+                            onClick={() => onClickVideo(video)}
+                        >
+                            <img
+                                src={video.thumbnail}
+                                alt={video.title}
+                                style={{width: "100%", height: 120, objectFit: "cover", borderRadius: 6}}
+                            />
+                            <div style={{marginTop: 8, fontWeight: "bold"}}>{video.title}</div>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 }

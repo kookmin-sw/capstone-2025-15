@@ -1,9 +1,9 @@
 import React, {useEffect, useRef, useState} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
-import Header from "../components/Header";
 import VideoPlayer from "../components/VideoPlayer";
 import SubtitlePanel from "../components/SubtitlePanel";
 import "../styles/SignAvatarPage.css";
+import NavBar from "../components/NavBar";
 
 export default function SignAvatarPage() {
     const location = useLocation();
@@ -93,67 +93,70 @@ export default function SignAvatarPage() {
     // 6. JSX 내에서 조건부 렌더링 처리
     return (
         <>
+
             {!videoUrl ? (
                 <div>로딩 중...</div>
             ) : (
-                <div className="container">
-                    <Header/>
-                    <div className="main-grid">
-                        <div className="grid-video">
-                            <VideoPlayer
-                                videoUrl={videoUrl}
-                                onTimeUpdate={setCurrentTime}
-                                onPlayPause={setIsMainPlaying}
-                                id="main-video"
-                            />
-                        </div>
+                <>
+                    <div className="container">
+                        <NavBar/>
+                        <div className="main-grid">
+                            <div className="grid-video">
+                                <VideoPlayer
+                                    videoUrl={videoUrl}
+                                    onTimeUpdate={setCurrentTime}
+                                    onPlayPause={setIsMainPlaying}
+                                    id="main-video"
+                                />
+                            </div>
 
-                        <div className="grid-avatar">
-                            {avatarData.map((avatar, index) =>
-                                avatar.speaker === focusedSpeaker ? (
-                                    <video
-                                        key={avatar.speaker}
-                                        src={avatar.videoUrl}
-                                        ref={(el) => (videoRefs.current[index] = el)}
-                                        muted
-                                        playsInline
-                                        className="focused-avatar"
-                                    />
-                                ) : null
-                            )}
-                        </div>
+                            <div className="grid-avatar">
+                                {avatarData.map((avatar, index) =>
+                                    avatar.speaker === focusedSpeaker ? (
+                                        <video
+                                            key={avatar.speaker}
+                                            src={avatar.videoUrl}
+                                            ref={(el) => (videoRefs.current[index] = el)}
+                                            muted
+                                            playsInline
+                                            className="focused-avatar"
+                                        />
+                                    ) : null
+                                )}
+                            </div>
 
-                        <div className="grid-subtitle">
-                            <SubtitlePanel
-                                subtitles={subtitleData.map((s) => ({
-                                    start: s.start / 1000,
-                                    end: s.end / 1000,
-                                    speaker: Number(s.speaker),
-                                    text: s.sentence,
-                                }))}
-                                onTimestampClick={(time) => {
-                                    const video = document.getElementById("main-video");
-                                    if (video) video.currentTime = time;
-                                }}
-                            />
-                        </div>
+                            <div className="grid-subtitle">
+                                <SubtitlePanel
+                                    subtitles={subtitleData.map((s) => ({
+                                        start: s.start / 1000,
+                                        end: s.end / 1000,
+                                        speaker: Number(s.speaker),
+                                        text: s.sentence,
+                                    }))}
+                                    onTimestampClick={(time) => {
+                                        const video = document.getElementById("main-video");
+                                        if (video) video.currentTime = time;
+                                    }}
+                                />
+                            </div>
 
-                        <div className="grid-thumbnails">
-                            {avatarData.map((avatar, index) =>
-                                avatar.speaker !== focusedSpeaker ? (
-                                    <video
-                                        key={avatar.speaker}
-                                        src={avatar.videoUrl}
-                                        ref={(el) => (videoRefs.current[index] = el)}
-                                        muted
-                                        playsInline
-                                        className="thumbnail-avatar"
-                                    />
-                                ) : null
-                            )}
+                            <div className="grid-thumbnails">
+                                {avatarData.map((avatar, index) =>
+                                    avatar.speaker !== focusedSpeaker ? (
+                                        <video
+                                            key={avatar.speaker}
+                                            src={avatar.videoUrl}
+                                            ref={(el) => (videoRefs.current[index] = el)}
+                                            muted
+                                            playsInline
+                                            className="thumbnail-avatar"
+                                        />
+                                    ) : null
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </>
             )}
         </>
     );
