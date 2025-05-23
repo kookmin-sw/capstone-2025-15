@@ -83,3 +83,22 @@ with open(RESULT_PATH, "w", newline="") as f:
     writer.writerow(["Testset", *models.keys()])
     writer.writerows(results)
     print(f"\n✅ 평가 결과 저장 완료 → {RESULT_PATH}")
+
+
+# 특정 문장을 대상으로 두 분석기의 결과를 출력해보자
+sample_sentence = "저는 점심을 아직 안 먹어서 배가 고파요."
+
+print("\n🧪 분석기별 결과 비교:")
+print(f"문장: {sample_sentence}")
+
+# MeCab 결과
+mecab_result = mecab_analyze(sample_sentence)
+print("\n📌 MeCab 결과:")
+for token, pos in mecab_result:
+    print(f"{token}\t{pos}")
+
+# Kiwi 결과
+kiwi_result = kiwi_analyze(sample_sentence)
+print("\n📌 Kiwi 결과:")
+for token, pos in kiwi_result:
+    print(f"{token}\t{pos}")

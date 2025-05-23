@@ -19,7 +19,7 @@ def clean_glosses(gloss_str):
     return ", ".join([clean_gloss_token(g) for g in gloss_str.split(",")])
 
 # 🔄 JSON 파일 순회
-for filename in os.listdir(INPUT_DIR):
+for filename in os.listdr(INPUT_DIR):
     if not filename.endswith(".json"):
         continue
 
