@@ -22,9 +22,8 @@
 
 <td align='center'> <img src="https://github.com/user-attachments/assets/0dbe83ca-f94f-4c1e-aa55-46cb6422eb6f" width="100%" height="100%"></td>
 
-### 소개 영상
-
-(여기에 영상 링크나 썸네일을 넣어주세요)
+### 시연 영상
+[![시연 영상 보기](https://img.youtube.com/vi/Em67GYuj_J4/hqdefault.jpg)](https://youtu.be/Em67GYuj_J4)
 
 ---
 
@@ -104,7 +103,7 @@
 
 ---
 
-## 4. 기술 스택
+## 5. 기술 스택
 
 ### 🖥️ Frontend
 
@@ -124,6 +123,9 @@
 
 ---
 
-## 5. 기타
+## 6. 프로젝트 자료 모음
+  
+  - [📄 최종 보고서 (PDF)](https://drive.google.com/file/d/18iu7BeQNqLtNGf_WCBq-rIt_Y9mHK9bj/view?usp=sharing)
+  - [🎤 발표 자료 (PDF)](https://drive.google.com/file/d/1WmAec_zjFSYx83TT2jmOf8Y-0IgbYc9D/view?usp=sharing)
+  - [🖼️ 포스터 (PDF)](https://drive.google.com/file/d/1ClkfZsZeSVjLHvxrlP8Jp9ca-jQ06LW5/view?usp=sharing)
 
-추가적인 내용은 자유롭게 작성하세요.
