@@ -43,12 +43,12 @@
         <td align='center'>20203150</td>
       </tr>
       <tr>
-        <td align='center'>최건웅</td>
+        <td align='center'>최건웅(팀장)</td>
         <td align='center'>최정민</td>
         <td align='center'>양기연</td>
       </tr>
       <tr>
-        <td align='center'>팀장, 수어 문법 변환 및 감정 분석</td>
+        <td align='center'>수어 문법 변환 및 감정 분석</td>
         <td align='center'>웹 개발 및 STT 분석</td>
         <td align='center'>아바타 생성</td>
       </tr>
