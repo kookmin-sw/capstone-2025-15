@@ -1,0 +1,14 @@
+[
+  {
+    "origin": [
+      "https://capstone-451204.df.r.appspot.com"
+    ],
+    "method": [
+      "GET"
+    ],
+    "responseHeader": [
+      "Content-Type"
+    ],
+    "maxAgeSeconds": 3600
+  }
+]
