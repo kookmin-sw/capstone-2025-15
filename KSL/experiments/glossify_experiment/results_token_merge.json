@@ -1,0 +1,214 @@
+[
+  {
+    "input": "불편하세요?",
+    "cleaned_tokens": [
+      "불편"
+    ],
+    "merged_tokens": [
+      "불편"
+    ],
+    "gold_gloss": "불편하다"
+  },
+  {
+    "input": "현금이세요?",
+    "cleaned_tokens": [
+      "현금"
+    ],
+    "merged_tokens": [
+      "현금"
+    ],
+    "gold_gloss": "돈"
+  },
+  {
+    "input": "왼쪽이요?",
+    "cleaned_tokens": [
+      "왼쪽"
+    ],
+    "merged_tokens": [
+      "왼쪽"
+    ],
+    "gold_gloss": "왼쪽"
+  },
+  {
+    "input": "서울농아인협회에서 내려드릴까요?",
+    "cleaned_tokens": [
+      "서울농아인협회",
+      "내리",
+      "드리"
+    ],
+    "merged_tokens": [
+      "서울농아인협회",
+      "내리",
+      "드리"
+    ],
+    "gold_gloss": "서울농아인협회"
+  },
+  {
+    "input": "위험한가요?",
+    "cleaned_tokens": [
+      "위험"
+    ],
+    "merged_tokens": [
+      "위험"
+    ],
+    "gold_gloss": "위험"
+  },
+  {
+    "input": "누구요?",
+    "cleaned_tokens": [
+      "누구"
+    ],
+    "merged_tokens": [
+      "누구"
+    ],
+    "gold_gloss": "누구"
+  },
+  {
+    "input": "가능한가요?",
+    "cleaned_tokens": [
+      "가능"
+    ],
+    "merged_tokens": [
+      "가능"
+    ],
+    "gold_gloss": "가능"
+  },
+  {
+    "input": "1호선인가요?",
+    "cleaned_tokens": [
+      "호선"
+    ],
+    "merged_tokens": [
+      "호선"
+    ],
+    "gold_gloss": "1호"
+  },
+  {
+    "input": "실수인가요?",
+    "cleaned_tokens": [
+      "실수"
+    ],
+    "merged_tokens": [
+      "실수"
+    ],
+    "gold_gloss": "실수하다"
+  },
+  {
+    "input": "현금이세요?",
+    "cleaned_tokens": [
+      "현금"
+    ],
+    "merged_tokens": [
+      "현금"
+    ],
+    "gold_gloss": "돈"
+  },
+  {
+    "input": "차가 막히나요?",
+    "cleaned_tokens": [
+      "차",
+      "막히"
+    ],
+    "merged_tokens": [
+      "차",
+      "막히"
+    ],
+    "gold_gloss": "차밀리다"
+  },
+  {
+    "input": "만원인가요?",
+    "cleaned_tokens": [],
+    "merged_tokens": [],
+    "gold_gloss": "만원"
+  },
+  {
+    "input": "시청에서 내려드릴까요?",
+    "cleaned_tokens": [
+      "시청",
+      "내리",
+      "드리"
+    ],
+    "merged_tokens": [
+      "시청",
+      "내리",
+      "드리"
+    ],
+    "gold_gloss": "시청"
+  },
+  {
+    "input": "2호선인가요?",
+    "cleaned_tokens": [
+      "호선"
+    ],
+    "merged_tokens": [
+      "호선"
+    ],
+    "gold_gloss": "2호"
+  },
+  {
+    "input": "어떤거요?",
+    "cleaned_tokens": [
+      "어떤"
+    ],
+    "merged_tokens": [
+      "어떤"
+    ],
+    "gold_gloss": "무엇"
+  },
+  {
+    "input": "청음회관에서 내려드릴까요?",
+    "cleaned_tokens": [
+      "청음",
+      "회관",
+      "내리",
+      "드리"
+    ],
+    "merged_tokens": [
+      "청음",
+      "회관",
+      "내리",
+      "드리"
+    ],
+    "gold_gloss": "청음회관"
+  },
+  {
+    "input": "급하세요?",
+    "cleaned_tokens": [
+      "급하"
+    ],
+    "merged_tokens": [
+      "급하"
+    ],
+    "gold_gloss": "급하다"
+  },
+  {
+    "input": "안되나요?",
+    "cleaned_tokens": [
+      "되"
+    ],
+    "merged_tokens": [
+      "되"
+    ],
+    "gold_gloss": "안되다"
+  },
+  {
+    "input": "히터 좀 켜드릴까요?",
+    "cleaned_tokens": [
+      "히터",
+      "켜",
+      "드리"
+    ],
+    "merged_tokens": [
+      "히터",
+      "켜",
+      "드리"
+    ],
+    "gold_gloss": "난방"
+  },
+  {
+    "input": "오천원인가요?",
+    "cleaned_tokens": [],
+    "merged_tokens": [],
+    "gold_gloss": "오천원"
+  }
+]

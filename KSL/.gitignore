@@ -1,0 +1,31 @@
+# 가상환경 (venv)
+.venv/
+venv/
+
+# 파이썬 캐시
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Jupyter notebook 체크포인트
+.ipynb_checkpoints/
+
+# 데이터셋 제외
+data/
+
+# 빌드/실행 파일
+Kiwi/
+*.so
+*.out
+*.exe
+*.dll
+
+# 에디터/IDE 파일
+.vscode/
+.idea/
+.DS_Store
+
+# 기타
+*.log
+*.tmp

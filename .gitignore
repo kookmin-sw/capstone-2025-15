@@ -1,4 +1,4 @@
-# 가상환경 (venv)
+# 가상환경
 .venv/
 venv/
 
@@ -12,47 +12,38 @@ __pycache__/
 .ipynb_checkpoints/
 
 # 데이터셋 제외
+data/
 data/*.csv
 data/*.jsonl
 
 # 빌드/실행 파일
+Kiwi/
 Kiwi/build/
 *.so
 *.out
 *.exe
 *.dll
 
-## BE
-# dependencies
+# BE (Backend)
 web/Backend/express/node_modules
-
-#build
 web/Backend/express/build
 
-##FE
-# dependencies
+# FE (Frontend)
 web/Frontend/node_modules
 web/Frontend/.pnp
 web/Frontend/.pnp.js
 
-# testing
+# FE 테스트/빌드/환경
 web/Frontend/coverage
-
-# production
 web/Frontend/build
-
-# misc
 web/Frontend/.env
-web/Frontend/.DS_Store
 web/Frontend/.env.local
 web/Frontend/.env.development.local
 web/Frontend/.env.test.local
 web/Frontend/.env.production.local
-
 web/Frontend/npm-debug.log*
 web/Frontend/yarn-debug.log*
 web/Frontend/yarn-error.log*
-
 
 # 에디터/IDE 파일
 .vscode/
@@ -62,4 +53,3 @@ web/Frontend/yarn-error.log*
 # 기타
 *.log
 *.tmp
-
