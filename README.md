@@ -22,7 +22,7 @@
 
 <td align='center'> <img src="https://github.com/user-attachments/assets/0dbe83ca-f94f-4c1e-aa55-46cb6422eb6f" width="100%" height="100%"></td>
 
-### 2. 소개 영상
+### 소개 영상
 
 (여기에 영상 링크나 썸네일을 넣어주세요)
 
@@ -60,9 +60,10 @@
 
 ---
 
-## 주요 기술
+## 3. 주요 기술
 
-### 1. STT 비교 및 선택
+### (1) STT 분석
+**비교 및 선택**
 
 AI-Hub 공개 주요 영역별 회의 음성인식 데이터 50개 음성데이터 약 50시간 음성에 대한 비교 분석 결과  
 https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=464
@@ -77,7 +78,7 @@ https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetS
 
 <td align='center'> <img width="882" alt="Image" src="https://github.com/user-attachments/assets/7b4808d2-48a5-41b5-a916-c5f7334998d1" /></td>
 
-### 평가 지표
+**평가 지표**
 
 CER (Character Error Rate): 문자 단위 오류율 (낮을수록 정확)
 
@@ -88,6 +89,13 @@ CER (Character Error Rate): 문자 단위 오류율 (낮을수록 정확)
     - N (Total Words): 기준 문장의 총 문자 수
 
 ---
+
+### (2) 아바타 생성
+영상으로부터 추출한 키포인트 데이터를 기반으로 Blender에서 아바타 애니메이션을 생성하고 렌더링합니다.
+
+  - **키포인트 추출**: OpenPose와 MediaPipe를 활용해 얼굴, 손, 몸의 3D 키포인트를 수집합니다.  
+  - **본 매핑**: 키포인트 벡터 방향을 기준으로 아바타 본의 회전을 자동 계산하고 매핑합니다.  
+  - **표정 구현**: 얼굴 키포인트 간 거리 기반으로 쉐이프키 값을 조절해 표정을 자연스럽게 표현합니다.
 
 ## 4. 기술 스택
 
