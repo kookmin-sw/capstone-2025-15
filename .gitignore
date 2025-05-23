@@ -2,13 +2,13 @@
 .venv/
 venv/
 
-# 파이썬 캐시
+# Python 캐시
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 
-# Jupyter notebook 체크포인트
+# Jupyter notebook
 .ipynb_checkpoints/
 
 # 데이터셋 제외
@@ -45,10 +45,18 @@ web/Frontend/npm-debug.log*
 web/Frontend/yarn-debug.log*
 web/Frontend/yarn-error.log*
 
-# 에디터/IDE 파일
 .vscode/
 .idea/
 .DS_Store
+
+# Blender 아바타 파일
+Blender/avatars/*.blend
+Blender/avatars/*.fbx
+*.blend1
+*.blend2
+
+# Unity 아바타 파일
+Unity/assets/*.fbx
 
 # 기타
 *.log
