@@ -1,0 +1,34 @@
+apiVersion: run.googleapis.com/v1
+kind: Job
+metadata:
+  annotations:
+    run.googleapis.com/creator: govl0407@gmail.com
+    run.googleapis.com/lastModifier: govl0407@gmail.com
+  labels:
+    cloud.googleapis.com/location: asia-northeast3
+    run.googleapis.com/lastUpdatedTime: '2025-02-23T06:39:33.963429Z'
+    run.googleapis.com/satisfiesPzs: 'true'
+  name: video-conversion-job
+  namespace: '219454056854'
+spec:
+  template:
+    metadata:
+      annotations:
+        run.googleapis.com/client-name: gcloud
+        run.googleapis.com/client-version: 511.0.0
+        run.googleapis.com/execution-environment: gen2
+      labels:
+        client.knative.dev/nonce: xim_toy_vas
+    spec:
+      taskCount: 1
+      template:
+        spec:
+          containers:
+          - image: gcr.io/capstone-451204/video-conversion-job
+            resources:
+              limits:
+                cpu: 1000m
+                memory: 4Gi
+          maxRetries: 3
+          serviceAccountName: 219454056854-compute@developer.gserviceaccount.com
+          timeoutSeconds: '3600'

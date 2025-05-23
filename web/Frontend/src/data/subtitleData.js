@@ -1,0 +1,52 @@
+const subtitleData = [
+    {
+        "sentence": "네 여기",
+        "speaker": "1",
+        "start": 0,
+        "end": 1992
+    },
+    {
+        "sentence": "안녕하세요.",
+        "speaker": "2",
+        "start": 1992,
+        "end": 3107
+    },
+    {
+        "sentence": "안녕하세요. 식사 안 하셨죠?",
+        "speaker": "1",
+        "start": 3107,
+        "end": 6000
+    },
+    {
+        "sentence": "네 이제 밥먹으러 가야죠",
+        "speaker": "2",
+        "start": 6000,
+        "end": 7500
+    },
+    {
+        "sentence": "저녁 먹으러 한번 가보도록 하겠습니다. 이 집이 유명해요.",
+        "speaker": "1",
+        "start": 7500,
+        "end": 14263
+    },
+    {
+        "sentence": "주문부터 할게요.",
+        "speaker": "1",
+        "start": 21000,
+        "end": 22800
+    },
+    {
+        "sentence": "여기 처음 와보신 거예요?",
+        "speaker": "3",
+        "start": 27800,
+        "end": 29000
+    },
+    {
+        "sentence": "아니요 아니요, 여러 번 와봤는데 제가 시킨 적이 없어요.",
+        "speaker": "1",
+        "start": 29000,
+        "end": 34020
+    }
+];
+
+export default subtitleData;

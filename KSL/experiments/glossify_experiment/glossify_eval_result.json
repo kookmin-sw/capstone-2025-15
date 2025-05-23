@@ -1,0 +1,1394 @@
+[
+  {
+    "input": "왼쪽이요?",
+    "kiwi_tokens": [
+      "왼쪽",
+      "이요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "왼쪽",
+      "이요",
+      "?"
+    ],
+    "gold_gloss": "왼쪽",
+    "glossify_mappings": []
+  },
+  {
+    "input": "오른쪽이요?",
+    "kiwi_tokens": [
+      "오른쪽",
+      "이요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "오른쪽",
+      "이요",
+      "?"
+    ],
+    "gold_gloss": "오른쪽",
+    "glossify_mappings": []
+  },
+  {
+    "input": "이것인가요?",
+    "kiwi_tokens": [
+      "이것",
+      "이",
+      "ᆫ가요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "여기",
+      "이",
+      "ᆫ가요",
+      "?"
+    ],
+    "gold_gloss": "여기",
+    "glossify_mappings": [
+      {
+        "from": "이것",
+        "to": "여기"
+      }
+    ]
+  },
+  {
+    "input": "급하세요?",
+    "kiwi_tokens": [
+      "급하",
+      "세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "급하다",
+      "세요",
+      "?"
+    ],
+    "gold_gloss": "급하다",
+    "glossify_mappings": [
+      {
+        "from": "급하",
+        "to": "급하다"
+      }
+    ]
+  },
+  {
+    "input": "저요?",
+    "kiwi_tokens": [
+      "저",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "저",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "나",
+    "glossify_mappings": []
+  },
+  {
+    "input": "위험한가요?",
+    "kiwi_tokens": [
+      "위험",
+      "하",
+      "ᆫ가요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "위험",
+      "하",
+      "ᆫ가요",
+      "?"
+    ],
+    "gold_gloss": "위험",
+    "glossify_mappings": []
+  },
+  {
+    "input": "늘 그런가요?",
+    "kiwi_tokens": [
+      "늘",
+      "그렇",
+      "ᆫ가요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "늘",
+      "항상",
+      "ᆫ가요",
+      "?"
+    ],
+    "gold_gloss": "항상",
+    "glossify_mappings": [
+      {
+        "from": "그렇",
+        "to": "항상"
+      }
+    ]
+  },
+  {
+    "input": "원래 그런가요?",
+    "kiwi_tokens": [
+      "원래",
+      "그렇",
+      "ᆫ가요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "원래",
+      "항상",
+      "ᆫ가요",
+      "?"
+    ],
+    "gold_gloss": "원래",
+    "glossify_mappings": [
+      {
+        "from": "그렇",
+        "to": "항상"
+      }
+    ]
+  },
+  {
+    "input": "오천원인가요?",
+    "kiwi_tokens": [
+      "오",
+      "천",
+      "원",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "오",
+      "천",
+      "원",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "오천원",
+    "glossify_mappings": []
+  },
+  {
+    "input": "만원인가요?",
+    "kiwi_tokens": [
+      "만",
+      "원",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "만",
+      "원",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "만원",
+    "glossify_mappings": []
+  },
+  {
+    "input": "장애인 복지 카드인가요?",
+    "kiwi_tokens": [
+      "장애인",
+      "복지",
+      "카드",
+      "이",
+      "ᆫ가요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "장애인",
+      "복지",
+      "카드",
+      "이",
+      "ᆫ가요",
+      "?"
+    ],
+    "gold_gloss": "장애인복지카드",
+    "glossify_mappings": []
+  },
+  {
+    "input": "다시 해볼까요?",
+    "kiwi_tokens": [
+      "다시",
+      "하",
+      "어",
+      "보",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "다시",
+      "하",
+      "어",
+      "보",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "다시",
+    "glossify_mappings": []
+  },
+  {
+    "input": "1호선인가요?",
+    "kiwi_tokens": [
+      "1",
+      "호선",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "1",
+      "호선",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "1호",
+    "glossify_mappings": []
+  },
+  {
+    "input": "2호선인가요?",
+    "kiwi_tokens": [
+      "2",
+      "호선",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "2",
+      "호선",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "2호",
+    "glossify_mappings": []
+  },
+  {
+    "input": "9호선인가요?",
+    "kiwi_tokens": [
+      "9",
+      "호선",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "9",
+      "호선",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "9호",
+    "glossify_mappings": []
+  },
+  {
+    "input": "모두 4명인가요?",
+    "kiwi_tokens": [
+      "모두",
+      "4",
+      "명",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "모두",
+      "4",
+      "명",
+      "이",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "4사람",
+    "glossify_mappings": []
+  },
+  {
+    "input": "가능한가요?",
+    "kiwi_tokens": [
+      "가능",
+      "하",
+      "ᆫ가요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "가능",
+      "하",
+      "ᆫ가요",
+      "?"
+    ],
+    "gold_gloss": "가능",
+    "glossify_mappings": []
+  },
+  {
+    "input": "안되나요?",
+    "kiwi_tokens": [
+      "안",
+      "되",
+      "나요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "안",
+      "되",
+      "나요",
+      "?"
+    ],
+    "gold_gloss": "안되다",
+    "glossify_mappings": []
+  },
+  {
+    "input": "탈까요?",
+    "kiwi_tokens": [
+      "타",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "타",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "타다",
+    "glossify_mappings": []
+  },
+  {
+    "input": "내릴까요?",
+    "kiwi_tokens": [
+      "내리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "내리다",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "내리다",
+    "glossify_mappings": [
+      {
+        "from": "내리",
+        "to": "내리다"
+      }
+    ]
+  },
+  {
+    "input": "도착했나요?",
+    "kiwi_tokens": [
+      "도착",
+      "하",
+      "었",
+      "나요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "도착",
+      "하",
+      "었",
+      "나요",
+      "?"
+    ],
+    "gold_gloss": "도착",
+    "glossify_mappings": []
+  },
+  {
+    "input": "있나요?",
+    "kiwi_tokens": [
+      "있",
+      "나요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "있",
+      "나요",
+      "?"
+    ],
+    "gold_gloss": "있다",
+    "glossify_mappings": []
+  },
+  {
+    "input": "없으세요?",
+    "kiwi_tokens": [
+      "없",
+      "으세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "없",
+      "으세요",
+      "?"
+    ],
+    "gold_gloss": "없다",
+    "glossify_mappings": []
+  },
+  {
+    "input": "주민등록증 있으세요?",
+    "kiwi_tokens": [
+      "주민등록증",
+      "있",
+      "으세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "신분증",
+      "있",
+      "으세요",
+      "?"
+    ],
+    "gold_gloss": "신분증",
+    "glossify_mappings": [
+      {
+        "from": "주민등록증",
+        "to": "신분증"
+      }
+    ]
+  },
+  {
+    "input": "승차권 있으세요?",
+    "kiwi_tokens": [
+      "승차권",
+      "있",
+      "으세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "표",
+      "있",
+      "으세요",
+      "?"
+    ],
+    "gold_gloss": "표",
+    "glossify_mappings": [
+      {
+        "from": "승차권",
+        "to": "표"
+      }
+    ]
+  },
+  {
+    "input": "실수인가요?",
+    "kiwi_tokens": [
+      "실수",
+      "이",
+      "ᆫ가요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "실수하다",
+      "이",
+      "ᆫ가요",
+      "?"
+    ],
+    "gold_gloss": "실수하다",
+    "glossify_mappings": [
+      {
+        "from": "실수",
+        "to": "실수하다"
+      }
+    ]
+  },
+  {
+    "input": "사고가 났나요?",
+    "kiwi_tokens": [
+      "사고",
+      "가",
+      "나",
+      "었",
+      "나요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "발생하다",
+      "가",
+      "나",
+      "었",
+      "나요",
+      "?"
+    ],
+    "gold_gloss": "발생하다",
+    "glossify_mappings": [
+      {
+        "from": "사고",
+        "to": "발생하다"
+      }
+    ]
+  },
+  {
+    "input": "괜찮으세요?",
+    "kiwi_tokens": [
+      "괜찮",
+      "으세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "괜찮다",
+      "으세요",
+      "?"
+    ],
+    "gold_gloss": "괜찮다",
+    "glossify_mappings": [
+      {
+        "from": "괜찮",
+        "to": "괜찮다"
+      }
+    ]
+  },
+  {
+    "input": "좋으세요?",
+    "kiwi_tokens": [
+      "좋",
+      "으세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "좋",
+      "으세요",
+      "?"
+    ],
+    "gold_gloss": "좋다",
+    "glossify_mappings": []
+  },
+  {
+    "input": "만족하세요?",
+    "kiwi_tokens": [
+      "만족",
+      "하",
+      "세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "충분하다",
+      "하",
+      "세요",
+      "?"
+    ],
+    "gold_gloss": "충분하다",
+    "glossify_mappings": [
+      {
+        "from": "만족",
+        "to": "충분하다"
+      }
+    ]
+  },
+  {
+    "input": "아시겠어요?",
+    "kiwi_tokens": [
+      "알",
+      "시",
+      "겠",
+      "어요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "알",
+      "시",
+      "겠",
+      "어요",
+      "?"
+    ],
+    "gold_gloss": "알다",
+    "glossify_mappings": []
+  },
+  {
+    "input": "필요하세요?",
+    "kiwi_tokens": [
+      "필요",
+      "하",
+      "세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "필요없다",
+      "하",
+      "세요",
+      "?"
+    ],
+    "gold_gloss": "필요",
+    "glossify_mappings": [
+      {
+        "from": "필요",
+        "to": "필요없다"
+      }
+    ]
+  },
+  {
+    "input": "빨리 가드릴까요?",
+    "kiwi_tokens": [
+      "빨리",
+      "가",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "빨리",
+      "가",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "빨리",
+    "glossify_mappings": [
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "앞 차를 따라갈까요?",
+    "kiwi_tokens": [
+      "앞",
+      "차",
+      "를",
+      "따라가",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "앞",
+      "차",
+      "를",
+      "따라가",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "차따라가다",
+    "glossify_mappings": []
+  },
+  {
+    "input": "어떤거요?",
+    "kiwi_tokens": [
+      "어떤",
+      "거",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "어떤",
+      "거",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "무엇",
+    "glossify_mappings": []
+  },
+  {
+    "input": "어디요?",
+    "kiwi_tokens": [
+      "어디",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "곳곳",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "곳곳",
+    "glossify_mappings": [
+      {
+        "from": "어디",
+        "to": "곳곳"
+      }
+    ]
+  },
+  {
+    "input": "누구요?",
+    "kiwi_tokens": [
+      "누구",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "누구",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "누구",
+    "glossify_mappings": []
+  },
+  {
+    "input": "어떻게 하나요?",
+    "kiwi_tokens": [
+      "어떻",
+      "게",
+      "하",
+      "나요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "어떻게",
+      "게",
+      "하",
+      "나요",
+      "?"
+    ],
+    "gold_gloss": "어떻게",
+    "glossify_mappings": [
+      {
+        "from": "어떻",
+        "to": "어떻게"
+      }
+    ]
+  },
+  {
+    "input": "왜요?",
+    "kiwi_tokens": [
+      "왜",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "왜",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "왜",
+    "glossify_mappings": []
+  },
+  {
+    "input": "몇 명이신가요?",
+    "kiwi_tokens": [
+      "몇",
+      "명",
+      "이",
+      "시",
+      "ᆫ가요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "몇",
+      "명",
+      "이",
+      "시",
+      "ᆫ가요",
+      "?"
+    ],
+    "gold_gloss": "몇사람",
+    "glossify_mappings": []
+  },
+  {
+    "input": "시청에서 내려드릴까요?",
+    "kiwi_tokens": [
+      "시청",
+      "에서",
+      "내리",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "시청",
+      "에서",
+      "내리다",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "시청",
+    "glossify_mappings": [
+      {
+        "from": "내리",
+        "to": "내리다"
+      },
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "나사렛대학교에서 내려드릴까요?",
+    "kiwi_tokens": [
+      "나사렛대학교",
+      "에서",
+      "내리",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "나사렛",
+      "에서",
+      "내리다",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "나사렛",
+    "glossify_mappings": [
+      {
+        "from": "나사렛대학교",
+        "to": "나사렛"
+      },
+      {
+        "from": "내리",
+        "to": "내리다"
+      },
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "한국농아인협회에서 내려드릴까요?",
+    "kiwi_tokens": [
+      "한국",
+      "농아",
+      "인",
+      "협회",
+      "에서",
+      "내리",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "한국",
+      "농아",
+      "인",
+      "협회",
+      "에서",
+      "내리다",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "한국농아인협회",
+    "glossify_mappings": [
+      {
+        "from": "내리",
+        "to": "내리다"
+      },
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "서울농아인협회에서 내려드릴까요?",
+    "kiwi_tokens": [
+      "서울농아인협회",
+      "에서",
+      "내리",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "서울농아인협회",
+      "에서",
+      "내리다",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "서울농아인협회",
+    "glossify_mappings": [
+      {
+        "from": "내리",
+        "to": "내리다"
+      },
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "서대문농아인복지관에서 내려드릴까요?",
+    "kiwi_tokens": [
+      "서대문",
+      "농아",
+      "인",
+      "복지관",
+      "에서",
+      "내리",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "서대문",
+      "농아",
+      "인",
+      "복지관",
+      "에서",
+      "내리다",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "서대문농아인복지관",
+    "glossify_mappings": [
+      {
+        "from": "내리",
+        "to": "내리다"
+      },
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "에어컨 좀 켜드릴까요?",
+    "kiwi_tokens": [
+      "에어컨",
+      "좀",
+      "켜",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "에어컨",
+      "좀",
+      "켜",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "에어컨",
+    "glossify_mappings": [
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "에어컨 좀 켜드릴까요?",
+    "kiwi_tokens": [
+      "에어컨",
+      "좀",
+      "켜",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "에어컨",
+      "좀",
+      "켜",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "에어컨",
+    "glossify_mappings": [
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "에어컨 좀 켜드릴까요?",
+    "kiwi_tokens": [
+      "에어컨",
+      "좀",
+      "켜",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "에어컨",
+      "좀",
+      "켜",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "에어컨",
+    "glossify_mappings": [
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "히터 좀 켜드릴까요?",
+    "kiwi_tokens": [
+      "히터",
+      "좀",
+      "켜",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "난방",
+      "좀",
+      "켜",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "난방",
+    "glossify_mappings": [
+      {
+        "from": "히터",
+        "to": "난방"
+      },
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "청음회관에서 내려드릴까요?",
+    "kiwi_tokens": [
+      "청음",
+      "회관",
+      "에서",
+      "내리",
+      "어",
+      "드리",
+      "ᆯ까요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "청음",
+      "회관",
+      "에서",
+      "내리다",
+      "어",
+      "에어컨",
+      "ᆯ까요",
+      "?"
+    ],
+    "gold_gloss": "청음회관",
+    "glossify_mappings": [
+      {
+        "from": "내리",
+        "to": "내리다"
+      },
+      {
+        "from": "드리",
+        "to": "에어컨"
+      }
+    ]
+  },
+  {
+    "input": "얼마인가요?",
+    "kiwi_tokens": [
+      "얼마",
+      "이",
+      "ᆫ가요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "돈얼마",
+      "이",
+      "ᆫ가요",
+      "?"
+    ],
+    "gold_gloss": "돈얼마",
+    "glossify_mappings": [
+      {
+        "from": "얼마",
+        "to": "돈얼마"
+      }
+    ]
+  },
+  {
+    "input": "아닌가요?",
+    "kiwi_tokens": [
+      "아니",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "아니다",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "아니다",
+    "glossify_mappings": [
+      {
+        "from": "아니",
+        "to": "아니다"
+      }
+    ]
+  },
+  {
+    "input": "맞나요?",
+    "kiwi_tokens": [
+      "맞",
+      "나요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "맞",
+      "나요",
+      "?"
+    ],
+    "gold_gloss": "맞다",
+    "glossify_mappings": []
+  },
+  {
+    "input": "아시겠죠?",
+    "kiwi_tokens": [
+      "알",
+      "시",
+      "겠",
+      "죠",
+      "?"
+    ],
+    "glossified_tokens": [
+      "알",
+      "시",
+      "겠",
+      "죠",
+      "?"
+    ],
+    "gold_gloss": "알다",
+    "glossify_mappings": []
+  },
+  {
+    "input": "필요없으신가요?",
+    "kiwi_tokens": [
+      "필요",
+      "없",
+      "으시",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "필요없다",
+      "없",
+      "으시",
+      "ᆫ가",
+      "요",
+      "?"
+    ],
+    "gold_gloss": "필요없다",
+    "glossify_mappings": [
+      {
+        "from": "필요",
+        "to": "필요없다"
+      }
+    ]
+  },
+  {
+    "input": "차가 막히나요?",
+    "kiwi_tokens": [
+      "차",
+      "가",
+      "막히",
+      "나요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "차",
+      "가",
+      "막히",
+      "나요",
+      "?"
+    ],
+    "gold_gloss": "차밀리다",
+    "glossify_mappings": []
+  },
+  {
+    "input": "현금이세요?",
+    "kiwi_tokens": [
+      "현금",
+      "이",
+      "세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "돈",
+      "이",
+      "세요",
+      "?"
+    ],
+    "gold_gloss": "돈",
+    "glossify_mappings": [
+      {
+        "from": "현금",
+        "to": "돈"
+      }
+    ]
+  },
+  {
+    "input": "현금이세요?",
+    "kiwi_tokens": [
+      "현금",
+      "이",
+      "세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "돈",
+      "이",
+      "세요",
+      "?"
+    ],
+    "gold_gloss": "돈",
+    "glossify_mappings": [
+      {
+        "from": "현금",
+        "to": "돈"
+      }
+    ]
+  },
+  {
+    "input": "현금이세요?",
+    "kiwi_tokens": [
+      "현금",
+      "이",
+      "세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "돈",
+      "이",
+      "세요",
+      "?"
+    ],
+    "gold_gloss": "돈",
+    "glossify_mappings": [
+      {
+        "from": "현금",
+        "to": "돈"
+      }
+    ]
+  },
+  {
+    "input": "현금이세요?",
+    "kiwi_tokens": [
+      "현금",
+      "이",
+      "세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "돈",
+      "이",
+      "세요",
+      "?"
+    ],
+    "gold_gloss": "돈",
+    "glossify_mappings": [
+      {
+        "from": "현금",
+        "to": "돈"
+      }
+    ]
+  },
+  {
+    "input": "현금이세요?",
+    "kiwi_tokens": [
+      "현금",
+      "이",
+      "세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "돈",
+      "이",
+      "세요",
+      "?"
+    ],
+    "gold_gloss": "돈",
+    "glossify_mappings": [
+      {
+        "from": "현금",
+        "to": "돈"
+      }
+    ]
+  },
+  {
+    "input": "불편하세요?",
+    "kiwi_tokens": [
+      "불편",
+      "하",
+      "세요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "불편하다",
+      "하",
+      "세요",
+      "?"
+    ],
+    "gold_gloss": "불편하다",
+    "glossify_mappings": [
+      {
+        "from": "불편",
+        "to": "불편하다"
+      }
+    ]
+  },
+  {
+    "input": "화나셨어요?",
+    "kiwi_tokens": [
+      "화나",
+      "시",
+      "었",
+      "어요",
+      "?"
+    ],
+    "glossified_tokens": [
+      "화나다",
+      "시",
+      "었",
+      "어요",
+      "?"
+    ],
+    "gold_gloss": "화나다",
+    "glossify_mappings": [
+      {
+        "from": "화나",
+        "to": "화나다"
+      }
+    ]
+  }
+]
