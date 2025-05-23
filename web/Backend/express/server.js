@@ -18,6 +18,11 @@ app.use('/test', testRouter);
 const pipelineRouter = require('./routes/pipelineRouter');
 app.use('/pipeline', pipelineRouter);
 
+//api 라우터
+const videosRouter = require('./routes/api/videosRouter');
+app.use('/api/videos', videosRouter);
+
+
 //리액트 앱 라우팅 처리
 app.get(/^\/(?!api|test).*/, (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
